@@ -27,6 +27,12 @@ class VaccineApi:
         """
         return self.__request("request.get", url)
 
+    def __sessions_create(self):
+        self.__request("sessions.create", None)
+
+    def __sessions_destroy(self):
+        self.__request("sessions.destroy", None)
+
     def find_available_slots(self, location: Location, priority_area: PriorityArea, date: date):
         """
         Finds the available vaccination spots.
@@ -52,9 +58,9 @@ class VaccineApi:
 
     def __enter__(self):
         logger.info("Creating browser session")
-        self.__request("sessions.create", None)
+        self.__sessions_create
         return self
 
     def __exit__(self, type, value, traceback):
         logger.info("Destroying browser session")
-        self.__request("sessions.destroy", None)
+        self.__sessions_destroy
