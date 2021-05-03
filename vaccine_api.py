@@ -1,12 +1,13 @@
 import logging
 import re
-from location import Location
-from priority_area import PriorityArea
 from datetime import date
 
 import requests
 
-logger = logging.getLogger("VaccineApi")
+from location import Location
+from priority_area import PriorityArea
+
+logger = logging.getLogger("vaccine_api")
 
 
 class VaccineApi:
@@ -47,7 +48,7 @@ class VaccineApi:
         request = self.__get(f"https://nygh.vertoengage.com/engage/api/api/cac-open-clinic/v1/slots/availability?day={date}T00:00:00.000-04:00&location_id={location.value}&slot_type={priority_area.value}&key=455aadd5-1e1b-4078-88e2-e375f2531536")
         content = request.text[request.text.find("slots_left"):]
         slots_left = re.search(r'\d+', content).group()
-        return slots_left
+        return int(slots_left)
 
     def __enter__(self):
         logger.info("Creating browser session")
