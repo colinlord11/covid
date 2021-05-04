@@ -42,8 +42,6 @@ docker run -d \
 
 Before running the script, specify the location and priority areas you'd like to search for in [main.py](https://github.com/qwbarch/scarborough-vaccine-checker/blob/688c4c49320d38cf07bec9c10ae6546f2b110d7c/main.py#L12)
 
-Here's a table for possible **Location** values:
-
 | Location                      |
 |-------------------------------|
 | SHN_CENTENARY_HOSPITAL        |
@@ -51,8 +49,6 @@ Here's a table for possible **Location** values:
 | CAREFIRST_SENIORS             |
 | SCARBOROUGH_CENTRE            |
 | TAIBU_COMMUNITY_HEALTH_CENTRE |
-
-Here's a table for possible **PriorityArea** values:
 
 | PriorityArea                               |
 |--------------------------------------------|
