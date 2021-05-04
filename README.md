@@ -42,19 +42,29 @@ docker run -d \
 
 Before running the script, specify the location and priority areas you'd like to search for in [main.py](https://github.com/qwbarch/scarborough-vaccine-checker/blob/688c4c49320d38cf07bec9c10ae6546f2b110d7c/main.py#L12)
 
-Here's a table for possible **Location** and **PriorityArea** values.
+Here's a table for possible **Location** values:
 
-| Location                      | PriorityArea                               |
-|-------------------------------|--------------------------------------------|
-| SHN_CENTENARY_HOSPITAL        | CENTENNIAL_COLLEGE                         |
-| CENTENNIAL_COLLEGE            | ELIGIBLE_AGE_GROUPS                        |
-| CAREFIRST_SENIORS             | ADULT_RECIPIENTS_OF_CHRONIC_HOME_CAREFIRST |
-| SCARBOROUGH_CENTRE            | INDIGENOUS_ADULT                           |
-| TAIBU_COMMUNITY_HEALTH_CENTRE | PRIORITY_HEALTHCARE_WORKERS                |
-|                               | FAITH_LEADERS                              |
-|                               | PEOPLE_WITH_HEALTH_CONDITIONS              |
-|                               | EDUCATION_WORKERS                          |
-|                               | TRANSPLANT_AND_CHEMOTHERAPY_RECIPIENTS     |
+| Location                      |
+|-------------------------------|
+| SHN_CENTENARY_HOSPITAL        |
+| CENTENNIAL_COLLEGE            |
+| CAREFIRST_SENIORS             |
+| SCARBOROUGH_CENTRE            |
+| TAIBU_COMMUNITY_HEALTH_CENTRE |
+
+Here's a table for possible **PriorityArea** values:
+
+| PriorityArea                               |
+|--------------------------------------------|
+| CENTENNIAL_COLLEGE                         |
+| ELIGIBLE_AGE_GROUPS                        |
+| ADULT_RECIPIENTS_OF_CHRONIC_HOME_CAREFIRST |
+| INDIGENOUS_ADULT                           |
+| PRIORITY_HEALTHCARE_WORKERS                |
+| FAITH_LEADERS                              |
+| PEOPLE_WITH_HEALTH_CONDITIONS              |
+| EDUCATION_WORKERS                          |
+| TRANSPLANT_AND_CHEMOTHERAPY_RECIPIENTS     |
 
 ## Running the script
 
