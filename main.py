@@ -19,11 +19,11 @@ logger = logging.getLogger("main")
 toast = ToastNotifier()
 
 async def run_script(location, priority_area):
-    today = date.today()
     async with aiohttp.ClientSession() as session:
         async with VaccineApi(location, priority_area, session) as api:
             is_slots_found = False
             while not is_slots_found:
+                today = date.today()
                 for i in range(1, 15):
                     check_date = today + timedelta(days=i)
                     available_slots = await api.find_available_slots(check_date)
@@ -31,7 +31,7 @@ async def run_script(location, priority_area):
                         is_slots_found = True
                         found_message = f"{available_slots} slot(s) are available on {check_date} at {location} for {priority_area}"
                         logger.info(found_message)
-                        toast.show_toast("Vaccination Appointment Found!", found_message, duration=0, threaded=True)
+                        toast.show_toast("Vaccination Appointment Found!", found_message, duration=30, threaded=True)
                         break
 
 async def main():
