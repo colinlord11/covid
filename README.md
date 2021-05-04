@@ -9,6 +9,8 @@ If you're lazy and would rather run a program to check for spots in the backgrou
 This simple script will continuously check for available slots through the website's internal api.  
 As soon as a slot is found, the program will stop and notify you the # of available slots.
 
+[![Script result example](https://i.gyazo.com/05471b176790e243649389f22457d191.gif)](https://gyazo.com/05471b176790e243649389f22457d191)
+
 ## Requirements
 
 To run the script, you'll need to install the following:
