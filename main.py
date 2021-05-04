@@ -31,7 +31,7 @@ async def run_script(location, priority_area):
                         is_slots_found = True
                         found_message = f"{available_slots} slot(s) are available on {check_date} at {location} for {priority_area}"
                         logger.info(found_message)
-                        toast.show_toast("Vaccination Appointment Found!", found_message, duration=30, threaded=True)
+                        toast.show_toast("Vaccination Appointment Found!", found_message, duration=0, threaded=True)
                         break
 
 async def main():

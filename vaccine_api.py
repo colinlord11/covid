@@ -63,9 +63,11 @@ class VaccineApi:
         logger.info(f"Searching for vaccination slots: [{self.location}, {self.priority_area}, {date}]")
         url = f"https://nygh.vertoengage.com/engage/api/api/cac-open-clinic/v1/slots/availability?day={date}T00:00:00.000-04:00&location_id={self.location.value}&slot_type={self.priority_area.value}&key=455aadd5-1e1b-4078-88e2-e375f2531536"
         response = await self.__get(url)
-        content = response[response.find("slots_left"):]
-        slots_left = re.search(r'\d+', response[response.find("slots_left"):]).group()
-        return int(slots_left)
+        slots_left = re.search(r'\d+', response[response.find("slots_left"):])
+        if slots_left is None:
+            return 0
+        else:
+            return int(slots_left.group())
 
     async def __aenter__(self):
         logger.info(f"Creating browser session for [{self.location}, {self.priority_area}]")
