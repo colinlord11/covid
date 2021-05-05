@@ -78,6 +78,7 @@ You may notice that it doesn't truly wait for the amount of seconds you specifie
 Each **location** and **priority area** spawns up a new browser session on **FlareSolver**.  
 The script only waits in between each request for that browser session.  
 To slow it down, simply increase the value in [search_delay_seconds](https://github.com/qwbarch/scarborough-vaccine-checker/blob/9fd9a4ad8ad9df53c24a42bb9b70a30a13efdc42/main.py#L15) until you feel satisfied.  
+
 Note: I do not recommend leaving the delay at 0, you're asking to be rate limited or potentially banned by their api for abusing it.
 
 ## Limitations
