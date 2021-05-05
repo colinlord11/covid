@@ -70,8 +70,14 @@ In order to start the script, enter the following command:
 ```
 py main.py
 ```
-
 This will keep running until a slot is found, which will then halt the script and display a notification.
+
+## It's requesting too fast! How do I slow it down?
+
+You may notice that it doesn't truly wait for the amount of seconds you specified in between each request.  
+Each **location** and **priority area** spawns up a new browser session on **FlareSolver**. The script only waits in between each request for that browser session.  
+Simply increase the value in [search_delay_seconds](https://github.com/qwbarch/scarborough-vaccine-checker/blob/9fd9a4ad8ad9df53c24a42bb9b70a30a13efdc42/main.py#L15) until you feel satisfied.  
+Note: I do not recommend leaving the delay at 0, you're asking to be rate limited or potentially banned by their api for abusing it.
 
 ## Limitations
 
