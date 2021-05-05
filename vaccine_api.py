@@ -23,6 +23,7 @@ class VaccineApi:
         self.location = location
         self.priority_area = priority_area
         self.session = session
+        self.session_id = location.name + priority_area.name
 
     async def __request(self, command: str, url: str) -> str:
         """
@@ -31,7 +32,7 @@ class VaccineApi:
         async with self.session.post("http://localhost:8191/v1", json={
             "cmd": command,
             "url": url,
-            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+            "session": self.session_id
         }) as response:
             return await response.text()
 

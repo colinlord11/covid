@@ -12,6 +12,7 @@ from vaccine_api import VaccineApi
 ############################# Specify your search details here #############################
 locations = [Location.CAREFIRST_SENIORS, Location.CENTENNIAL_COLLEGE]
 priority_areas = [PriorityArea.ELIGIBLE_AGE_GROUPS, PriorityArea.TRANSPLANT_AND_CHEMOTHERAPY_RECIPIENTS]
+search_delay_seconds = 2
 ############################################################################################
 
 logging.basicConfig(level=logging.INFO)
@@ -33,6 +34,8 @@ async def run_script(location, priority_area):
                         logger.info(found_message)
                         toast.show_toast("Vaccination Appointment Found!", found_message, duration=0, threaded=True)
                         break
+                    elif search_delay_seconds != 0:
+                        await asyncio.sleep(search_delay_seconds)
 
 async def main():
     tasks = [asyncio.create_task(run_script(location, priority_area)) for location in locations for priority_area in priority_areas]
